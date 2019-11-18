@@ -167,7 +167,7 @@ end
 
 def player_stats(input)
   game_hash.each do |team, team_info| #split the game hash into keys team and team info and iterate through them
-        team_info[:player].each do |player| #for index in the array players
+        team_info[:players].each do |player| #for index in the array players
           if input == player[:player_name] #if the input is the players name
             player.delete(:player_name) #remove player_name from the array since we are not returning this
             return player #return what is left in the hash that is the index
