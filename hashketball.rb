@@ -160,8 +160,6 @@ def player_numbers(input) # takes in argument of team returns all players jersey
       team_info[:players].each do |player| #for index in the array players
        array.push(player[:number]) #add each player number to the array
             end
-          end
-        end
       end
     end
     array #return array
