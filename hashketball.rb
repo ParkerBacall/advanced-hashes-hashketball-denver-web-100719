@@ -159,7 +159,7 @@ def player_numbers(input) # takes in argument of team returns all players jersey
    if input == team_info[:team_name] # if the input matches the team_name: value for either team
       team_info[:players].each do |player| #for index in the array players
        array.push(player[:number]) #add each player number to the array
-            end
+        end
       end
     end
     array #return array
