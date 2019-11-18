@@ -154,7 +154,7 @@ def team_names()
 end
 
 def player_numbers(input) # takes in argument of team returns all players jersey numbers
-  array = [] #create new array which will be full of player numbers
+  
   game_hash.each do |team, team_info| #split the game hash into keys team and team info and iterate through them
    if input == team_info[:team_name] # if the input matches the team_name: value for either team
       team_info[:players].map do |player| #for index in the array players
@@ -162,7 +162,6 @@ def player_numbers(input) # takes in argument of team returns all players jersey
         end
       end
     end
-    array #return array
 end
 
 def player_stats(input)
