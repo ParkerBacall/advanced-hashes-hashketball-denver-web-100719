@@ -185,53 +185,56 @@ def player_stats(input)
   end
 end
 
-def big_shoe_rebounds
-  big_shoe = 0
-  rebounds = 0
-  game_hash.each do |team, team_info|
-    team_info[:players].each do |player|
-      if player[:shoe] > big_shoe
-        big_shoe = player[:shoe]
-        rebounds = player[:rebounds]
+def big_shoe_rebounds #returns the rebounds stat for the player with the largest shoe size
+  big_shoe = 0 #variable that will store largest shoe size
+  rebounds = 0 #variable that will store rebonds of the player with the largest shoe size
+  game_hash.each do |team, team_info| #iterate through teams and team info
+    team_info[:players].each do |player|#iterate through each item in the players key
+      if player[:shoe] > big_shoe # if the players shoe size is greater than the big shoe
+        big_shoe = player[:shoe] # set big shoe to player shoe size
+        rebounds = player[:rebounds] #set rebounds to players rebound score
+        #do for the rest of the players
       end
     end
   end
-    rebounds
+    rebounds # return rebound variable
 end
 
-def most_points_scored
-  most_points = 0
-  most_points_player = 0
-    game_hash.each do |team, team_info|
-      team_info[:players].each do |player|
-       if player[:points] > most_points
-         most_points = player[:points]
-         most_points_player = player[:player_name]
+def most_points_scored #returns the player with the most points scored
+  most_points = 0 #create variable for the value of the most point
+  most_points_player = " " # create variable for the name of the player with the most points
+    game_hash.each do |team, team_info| #iterate through teams and team info
+      team_info[:players].each do |player| #iterate through each item in the players key
+       if player[:points] > most_points #if the players points are greater than the most points
+         most_points = player[:points] #update most points to equal the players points
+         most_points_player = player[:player_name] # update most points player to be the players name
+           #do for the rest of the players
        end
      end
     end
-    most_points_player
+    most_points_player #return the name of the player with the most points
 end
 
-def winning_team
-  total_points = 0
+def winning_team #return the name of the team with more points
+  total_points = 0 #
   winning_team = " "
     game_hash.each do |team, team_info|
-      team_points = 0
-      team_name = game_hash[team][:team_name]
-      team_info[:players].each do |player|
-        points = player[:points]
-        team_points += points
+      team_points = 0 # set team points equal to zero for each team
+      team_name = game_hash[team][:team_name] # set team name equal to the teams name for each iteration
+      team_info[:players].each do |player| # for each player in the players key
+        points = player[:points] # set points equal to there points
+        team_points += points # add there points to the team points
       end
-      if team_points > total_points
-          total_points = team_points
-          winning_team = team_name
+      if team_points > total_points # check if team points are greater than the total point
+          total_points = team_points # set total points to team points
+          winning_team = team_name set #set winning team to team name
+          #do for both teams
     end
   end
-  return winning_team
+  return winning_team # return final winning_team
 end
 
-def player_with_longest_name
+def player_with_longest_name #return player with longest name
 name_length = 0
 longest_name = " "
 game_hash.each do |team, team_info|
