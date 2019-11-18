@@ -119,7 +119,7 @@ def game_hash #build the big hash
 end
 
 def num_points_scored(name) #takes in name
-  game_hash.each do |home_away, team_info| #digs into array first variable is home or away second is player colors teamnae
+  game_hash.each do |home_away, team_info| #digs into array first variable is home or away second is player colors teamname
     team_info[:players].each do |player| #selects players key
       if player[:player_name] == name # if player_name = name
         return player[:points] # return that players points
