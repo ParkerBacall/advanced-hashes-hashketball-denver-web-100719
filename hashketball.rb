@@ -171,8 +171,6 @@ def player_stats(input)
           if input == player[:player_name] #if the input is the players name
             player.delete(:player_name) #remove player_name from the array since we are not returning this
             return player #return what is left in the hash that is the index
-          end
-        end
       end
     end
   end
